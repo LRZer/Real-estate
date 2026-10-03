@@ -22,6 +22,44 @@ Ridge receives these 19 features plus a 70-dimensional city one-hot code. Neural
 
 The six-month prototype only covers t-5…t. The new version changes both the window and context head. Its three-seed validation improvement from 0.2951 to 0.2791 pp is a configuration comparison, not a causal attribution to one additional month.
 
+### Feature columns and sample alignment
+
+Columns follow the order in [the feature builder](../research/train_forecast.py) and are recorded in [checkpoint metadata](../research/results/research/model_metadata.json):
+
+| Group | Actual column names, in group order |
+| --- | --- |
+| Current values | `new_mom_pct`, `second_mom_pct` |
+| Panel context | `national_new_mean`, `national_second_mean`, `share_cities_rising` |
+| Calendar | `calendar_sin`, `calendar_cos` |
+| New-home lags | `new_lag1`, `new_lag2`, `new_lag3`, `new_lag6` |
+| Second-hand lags | `second_lag1`, `second_lag2`, `second_lag3`, `second_lag6` |
+| Means | `new_mean3`, `new_mean6`, `second_mean3`, `second_mean6` |
+
+Rolling means include t. Calendar codes are sin(2πq/12) and cos(2πq/12), where q is the input month number. The label and its source URL shift to the next month within each city's series.
+
+| Sample role | Known input window | Label / forecast month |
+| --- | --- | --- |
+| First supervised sample | May–Nov 2021 | Dec 2021 |
+| Last training sample for Jan 2025 | May–Nov 2024 | Dec 2024, released |
+| Jan 2025 retrospective forecast | Jun–Dec 2024 | Jan 2025, unread at prediction |
+| Final as-of forecast | Jul 2025–Jan 2026 | Feb 2026, no actual label |
+
+Each origin uses all supervised samples with target months earlier than the forecast month. From December 2021 onward, this gives 25 training months for January 2024, 37 for January 2025, 49 for January 2026 and 50 for February 2026; each month has 70 rows. Scalers and models are refitted at every origin. Neural models are reinitialized rather than inheriting previous-origin weights.
+
+### Primary model and non-neural controls
+
+Ridge applies `StandardScaler` to the 19 numeric columns using training rows, then appends the 70-dimensional city one-hot code. With 89 columns and an intercept, it minimizes:
+
+$$
+\min_{w,b}\sum_{(c,j)\in \mathcal T_m}
+(y_{c,j}-b-z_{c,j}^{\mathsf T}w)^2+\alpha\lVert w\rVert_2^2,
+\qquad \mathcal T_m=\{(c,j):c=1,\ldots,70,\ j\in\mathcal M_m\}.
+$$
+
+Here $\mathcal M_m$ contains known label months from December 2021 onward, earlier than m. Penalties 5, 25 and 100 are screened; the primary uses 25. City one-hot coefficients are also regularized. Last month outputs $\hat y_{c,m}=y_{c,m-1}$ with no fitted parameters.
+
+The tree control uses 19 unscaled numeric columns plus city one-hot codes: `HistGradientBoostingRegressor`, 120 iterations, learning rate 0.05, maximum leaves 7 or 15, minimum leaf samples 30, L2=0.5, early stopping disabled and random_state=42.
+
 ## Contextual temporal CNN
 
 ![Architecture](figures/en/03_architecture.png)
@@ -38,21 +76,50 @@ The six-month prototype only covers t-5…t. The new version changes both the wi
 
 Parameters: embedding 280, convolutions 84+444, head 864+25, totaling 1,697. The output layer is zero-initialized. This network does not use dilated convolutions or a Transformer.
 
-Neural fits use AdamW learning rate 0.006 and weight decay 0.02, Huber beta 0.25, gradient clipping 1, and 60 fixed epochs per origin. Target-month outcomes do not control early stopping. Screening uses seeds 13/31/47; final CNN and direction representatives add 61/79. Predictions are averaged. Seed MAE dispersion describes repeated fits, not a temporal sampling interval.
+B counts target months. Inputs are reshaped to (B×70)×2×7 for shared per-city convolutions, with symmetric padding within the known window. Pooling restores B×70×12. Known panel means/rising shares provide cross-city context; the current convolutional architecture has no city-graph message passing.
+
+Channel means and standard deviations are computed across training months × cities × sequence positions, with a standard deviation floor of 0.05. Overlapping windows contribute according to their actual occurrences. The 19 numeric columns separately use `StandardScaler` on training rows. Forecast windows only apply those fitted statistics. Inference loads `preprocessing.npz` together with city/feature ordering metadata.
+
+Neural fits use AdamW learning rate 0.006, weight decay 0.02, gradient clipping 1, and 60 fixed epochs per origin. Each epoch makes one full-batch update using all past training months × 70 cities. Target-month outcomes do not control early stopping. Screening uses seeds 13/31/47; final CNN and direction representatives add 61/79. Inference disables Dropout and averages predictions. Seed MAE dispersion describes repeated fits, not a temporal sampling interval.
+
+Core regression uses PyTorch `smooth_l1_loss` with β=0.25. For error e=prediction−actual, the loss and reduction are:
+
+$$
+\ell_\beta(e)=
+\begin{cases}
+e^2/(2\beta), & |e|<\beta,\\
+|e|-\beta/2, & |e|\ge\beta,
+\end{cases}
+\qquad
+L_{\mathrm{city}}=\frac1{70|\mathcal M_m|}
+\sum_{j\in\mathcal M_m}\sum_{c=1}^{70}\ell_\beta(\hat y_{c,j}-y_{c,j}).
+$$
+
+Errors, β and corrections use the monthly movement's percentage-point scale. Zero output initialization starts the correction at zero; the loss is computed on the final prediction.
 
 ## Separate ablations
 
 ### Reversible window normalization
 
-Following the idea in [RevIN's author implementation](https://github.com/ts-kim/RevIN), compute each city's channel means μ and standard deviations σ from its known seven-month window, with affine parameters disabled and a standard deviation floor of0.05. Encode $(x-\mu)/\sigma$; scale the predicted correction by the new-home σ before adding the original-scale last value. There are two input channels but one target channel. The same 19 context features remain available.
+Tests whether differences in city-window levels and fluctuation scales affect fitting.
+
+Following the idea in [RevIN's author implementation](https://github.com/ts-kim/RevIN), compute each city's channel means μ and standard deviations σ from its known seven-month window, with affine parameters disabled and a standard deviation floor of 0.05. Encode $(x-\mu)/\sigma$; scale the predicted correction by the new-home σ before adding the original-scale last value. There are two input channels but one target channel. The same 19 context features remain available.
 
 ### Past-error calibration
 
-Use monthly Ridge alpha 25. After release, compute $e_m=\frac1{70}\sum_c(\hat y_{c,m}-y_{c,m})$ and $b_m=\rho b_{m-1}+(1-\rho)e_m$. The next forecast is $\hat y^{corr}_{c,m}=\hat y_{c,m}-\lambda b_{m-1}$.
+Use monthly Ridge alpha 25. Forecast month m with the existing past state:
+
+$$
+\hat y^{corr}_{c,m}=\hat y^{\mathrm{Ridge}}_{c,m}-\lambda b_{m-1}.
+$$
+
+After month m's actual release, compute $e_m=\frac1{70}\sum_c(\hat y^{\mathrm{Ridge}}_{c,m}-y_{c,m})$ from the **uncorrected Ridge forecast**, then update $b_m=\rho b_{m-1}+(1-\rho)e_m$ for month m+1.
 
 rho is 0.5/0.8; lambda is 0.5/1. The state starts at zero in January 2024, updates after predicting, and carries through 2025 and the final forecast. It uses past rolling out-of-sample errors, not training residuals.
 
 ### Market/city decomposition
+
+Tests separate learning of common market movements and city deviations.
 
 For training targets, define $g_m=\frac1{70}\sum_c y_{c,m}$ and $r_{c,m}=y_{c,m}-g_m$. Forecast $\hat y_{c,m}=\hat g_m+\hat r_{c,m}$ and center predicted city residuals to zero. At inference, use predicted g, never the target month's observed mean.
 
@@ -62,7 +129,9 @@ The market mean is a descriptive panel statistic, not an NBS national index.
 
 ### Auxiliary direction learning
 
-Add a three-class fall/flat/rise head to the unnormalized two-branch CNN's shared 24-dimensional representation. Add eta×cross-entropy, with eta 0.01/0.05. Class weighting is disabled or uses inverse square-root training frequencies, capped at 3 and normalized to mean 1 over training labels.
+Tests how an auxiliary classification constraint and class weighting affect rise detection and magnitude error.
+
+Add a three-class fall/flat/rise head to the unnormalized two-branch CNN's shared 24-dimensional representation. Training labels use actual movements below, equal to or above zero. Add eta×cross-entropy, with eta 0.01/0.05. Class weighting is disabled or uses inverse square-root training frequencies, first capped at 3 and then normalized to mean 1 over training labels.
 
 The classifier does not overwrite regression. Three-way regression signs use a fixed ±0.05 flat band. Binary rise is >0; balanced binary scores exclude actual flat cases. Classifier and regression directions are scored separately, including their disagreement rate.
 
@@ -83,6 +152,12 @@ Primary replacement requires ≥3% lower 2024 MAE, improvement in at least 8 mon
 Five-seed confirmation does not enter earlier quarterly selection. Original three-seed records select the next quarter from preceding 3/6/9 months. Full-year ensemble validation uses experts selected from the full year and has additional selection uncertainty.
 
 Paired intervals preserve all 70 cities within each month and use 20,000 circular three-month block resamples. They do not correct researcher exposure to the later period, configuration selection or possible official revisions. NBS base/category-weight changes in January 2026 motivate separate 2025-only and January 2026 results.
+
+### Metric definitions
+
+For forecast-month set $\mathcal E$, MAE is $\frac1{70|\mathcal E|}\sum_{m\in\mathcal E}\sum_c|\hat y_{c,m}-y_{c,m}|$. Since every month has 70 cities, this equals the equal-weight mean of monthly MAE. RMSE is the square root of mean squared error; signed bias is mean prediction−actual. Rising/falling MAE uses observations with actual >0/<0 respectively.
+
+Binary balanced accuracy averages rising recall and the fraction of falling observations predicted as non-rising; actual zeros are excluded. Magnitude, classifier-head and regression-sign results are scored separately. Aggregate MAE, group errors, monthly stability and paired intervals are reported together; primary selection uses 2024 records only.
 
 ## Implementation
 
