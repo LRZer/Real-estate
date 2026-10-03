@@ -1,0 +1,117 @@
+{
+  "as_of_date": "2026-02-28",
+  "latest_available_index_month": "2026-01",
+  "latest_original_release": "2026-02-13",
+  "data_months": 57,
+  "cities_per_month": 70,
+  "model_target": "next-month new-home price-index MoM percentage-point change",
+  "split_rows": {
+    "train": 1750,
+    "validation": 840,
+    "final_train": 2590,
+    "test": 910
+  },
+  "validation": {
+    "zero_change": {
+      "mae_percentage_points": 0.5574,
+      "median_ae_percentage_points": 0.5,
+      "direction_accuracy": 0.0262,
+      "bias_percentage_points": 0.4929
+    },
+    "last_month": {
+      "mae_percentage_points": 0.3377,
+      "median_ae_percentage_points": 0.3,
+      "direction_accuracy": 0.8571,
+      "bias_percentage_points": -0.0304
+    },
+    "city_mean": {
+      "mae_percentage_points": 0.4494,
+      "median_ae_percentage_points": 0.372,
+      "direction_accuracy": 0.7179,
+      "bias_percentage_points": 0.3509
+    },
+    "ridge": {
+      "mae_percentage_points": 0.2787,
+      "median_ae_percentage_points": 0.217,
+      "direction_accuracy": 0.8726,
+      "bias_percentage_points": 0.0001
+    },
+    "gradient_boosting": {
+      "mae_percentage_points": 0.3065,
+      "median_ae_percentage_points": 0.2458,
+      "direction_accuracy": 0.8714,
+      "bias_percentage_points": 0.0693
+    }
+  },
+  "selected_on_validation": "ridge",
+  "test": {
+    "zero_change": {
+      "mae_percentage_points": 0.3501,
+      "median_ae_percentage_points": 0.3,
+      "direction_accuracy": 0.0495,
+      "bias_percentage_points": 0.2679
+    },
+    "last_month": {
+      "mae_percentage_points": 0.2487,
+      "median_ae_percentage_points": 0.2,
+      "direction_accuracy": 0.7516,
+      "bias_percentage_points": 0.0216
+    },
+    "city_mean": {
+      "mae_percentage_points": 0.2558,
+      "median_ae_percentage_points": 0.2162,
+      "direction_accuracy": 0.767,
+      "bias_percentage_points": 0.0121
+    },
+    "ridge": {
+      "mae_percentage_points": 0.2234,
+      "median_ae_percentage_points": 0.1877,
+      "direction_accuracy": 0.8044,
+      "bias_percentage_points": -0.0735
+    },
+    "gradient_boosting": {
+      "mae_percentage_points": 0.2094,
+      "median_ae_percentage_points": 0.1726,
+      "direction_accuracy": 0.8044,
+      "bias_percentage_points": -0.0354
+    }
+  },
+  "shandong_test": {
+    "济南": {
+      "mae_percentage_points": 0.1673,
+      "median_ae_percentage_points": 0.1443,
+      "direction_accuracy": 0.8462,
+      "bias_percentage_points": -0.0115
+    },
+    "青岛": {
+      "mae_percentage_points": 0.1252,
+      "median_ae_percentage_points": 0.1153,
+      "direction_accuracy": 0.7692,
+      "bias_percentage_points": -0.0429
+    },
+    "烟台": {
+      "mae_percentage_points": 0.2348,
+      "median_ae_percentage_points": 0.2236,
+      "direction_accuracy": 0.9231,
+      "bias_percentage_points": -0.031
+    },
+    "济宁": {
+      "mae_percentage_points": 0.192,
+      "median_ae_percentage_points": 0.1443,
+      "direction_accuracy": 1.0,
+      "bias_percentage_points": -0.0385
+    }
+  },
+  "ablation_without_secondhand_features": {
+    "mae_percentage_points": 0.217,
+    "median_ae_percentage_points": 0.1895,
+    "direction_accuracy": 0.811,
+    "bias_percentage_points": -0.0302
+  },
+  "empirical_80pct_absolute_error_pp": 0.362,
+  "notes": [
+    "The official statistic is a city-level price index, not a price per square meter or an individual sale price.",
+    "No observation first published after 2026-02-28 is used.",
+    "The February 2026 forecast is made from the January 2026 release and is not scored here."
+  ]
+}

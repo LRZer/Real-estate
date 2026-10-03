@@ -1,0 +1,169 @@
+{
+  "configurations": {
+    "ridge_5": {
+      "kind": "ridge",
+      "alpha": 5,
+      "group": "baseline"
+    },
+    "ridge_25": {
+      "kind": "ridge",
+      "alpha": 25,
+      "group": "baseline"
+    },
+    "ridge_100": {
+      "kind": "ridge",
+      "alpha": 100,
+      "group": "baseline"
+    },
+    "hgb_15": {
+      "kind": "hgb",
+      "leaves": 15,
+      "group": "baseline"
+    },
+    "hgb_7": {
+      "kind": "hgb",
+      "leaves": 7,
+      "group": "baseline"
+    },
+    "nlinear": {
+      "kind": "nlinear",
+      "group": "baseline"
+    },
+    "legacy_tcn": {
+      "kind": "legacy",
+      "group": "reference"
+    },
+    "fair_tcn": {
+      "kind": "fair",
+      "group": "fair_input"
+    },
+    "revin_tcn": {
+      "kind": "revin",
+      "group": "normalization"
+    },
+    "bias_0.5_0.5": {
+      "kind": "bias",
+      "rho": 0.5,
+      "strength": 0.5,
+      "group": "calibration"
+    },
+    "bias_0.5_1.0": {
+      "kind": "bias",
+      "rho": 0.5,
+      "strength": 1.0,
+      "group": "calibration"
+    },
+    "bias_0.8_0.5": {
+      "kind": "bias",
+      "rho": 0.8,
+      "strength": 0.5,
+      "group": "calibration"
+    },
+    "bias_0.8_1.0": {
+      "kind": "bias",
+      "rho": 0.8,
+      "strength": 1.0,
+      "group": "calibration"
+    },
+    "decomp_ridge": {
+      "kind": "decomp_ridge",
+      "group": "decomposition"
+    },
+    "decomp_tcn": {
+      "kind": "decomp",
+      "group": "decomposition"
+    },
+    "decomp_revin": {
+      "kind": "decomp_revin",
+      "group": "decomposition"
+    },
+    "multitask_0.01_plain": {
+      "kind": "multitask",
+      "eta": 0.01,
+      "weighted": false,
+      "group": "direction"
+    },
+    "multitask_0.01_weighted": {
+      "kind": "multitask",
+      "eta": 0.01,
+      "weighted": true,
+      "group": "direction"
+    },
+    "multitask_0.05_plain": {
+      "kind": "multitask",
+      "eta": 0.05,
+      "weighted": false,
+      "group": "direction"
+    },
+    "multitask_0.05_weighted": {
+      "kind": "multitask",
+      "eta": 0.05,
+      "weighted": true,
+      "group": "direction"
+    }
+  },
+  "ensemble_configurations": 2,
+  "data_sha256": "2C8F96499B410FFA693F17FF11708509E9A3D37C57804BE0E7CD96D7EF324714",
+  "code_and_data_fingerprint": "27555853eb1c250cca10f39eb5743162169ce3b17f6ebc6e9f923ad9756093c9",
+  "seeds_screening": [
+    13,
+    31,
+    47
+  ],
+  "seeds_confirmation": [
+    13,
+    31,
+    47,
+    61,
+    79
+  ],
+  "neural_epochs": 60,
+  "nonlinear_candidates": [
+    "fair_tcn",
+    "revin_tcn",
+    "decomp_tcn",
+    "decomp_revin",
+    "multitask_0.01_plain",
+    "multitask_0.01_weighted",
+    "multitask_0.05_plain",
+    "multitask_0.05_weighted"
+  ],
+  "validation_months": [
+    "2024-01",
+    "2024-02",
+    "2024-03",
+    "2024-04",
+    "2024-05",
+    "2024-06",
+    "2024-07",
+    "2024-08",
+    "2024-09",
+    "2024-10",
+    "2024-11",
+    "2024-12"
+  ],
+  "retrospective_months": [
+    "2025-01",
+    "2025-02",
+    "2025-03",
+    "2025-04",
+    "2025-05",
+    "2025-06",
+    "2025-07",
+    "2025-08",
+    "2025-09",
+    "2025-10",
+    "2025-11",
+    "2025-12",
+    "2026-01"
+  ],
+  "max_neural_parameters": 5000,
+  "declared_before_new_runs": true,
+  "environment": {
+    "python": "3.11.7",
+    "numpy": "1.26.4",
+    "pandas": "1.5.3",
+    "sklearn": "1.2.2",
+    "torch": "2.5.1+cpu"
+  }
+}

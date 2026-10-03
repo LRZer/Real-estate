@@ -1,0 +1,62 @@
+{
+  "experts": [
+    "ridge",
+    "temporal_net",
+    "residual_graph_net",
+    "last_month"
+  ],
+  "grid": {
+    "memory_0.5_temperature_0.02": {
+      "memory": 0.5,
+      "temperature_pp": 0.02,
+      "validation_mae_pp": 0.2831815910728622
+    },
+    "memory_0.5_temperature_0.05": {
+      "memory": 0.5,
+      "temperature_pp": 0.05,
+      "validation_mae_pp": 0.28526562732735444
+    },
+    "memory_0.5_temperature_0.1": {
+      "memory": 0.5,
+      "temperature_pp": 0.1,
+      "validation_mae_pp": 0.28675436371880497
+    },
+    "memory_0.8_temperature_0.02": {
+      "memory": 0.8,
+      "temperature_pp": 0.02,
+      "validation_mae_pp": 0.2835666240932118
+    },
+    "memory_0.8_temperature_0.05": {
+      "memory": 0.8,
+      "temperature_pp": 0.05,
+      "validation_mae_pp": 0.2858575002701072
+    },
+    "memory_0.8_temperature_0.1": {
+      "memory": 0.8,
+      "temperature_pp": 0.1,
+      "validation_mae_pp": 0.2872877644002428
+    },
+    "memory_0.95_temperature_0.02": {
+      "memory": 0.95,
+      "temperature_pp": 0.02,
+      "validation_mae_pp": 0.28589809741153127
+    },
+    "memory_0.95_temperature_0.05": {
+      "memory": 0.95,
+      "temperature_pp": 0.05,
+      "validation_mae_pp": 0.28767550194425756
+    },
+    "memory_0.95_temperature_0.1": {
+      "memory": 0.95,
+      "temperature_pp": 0.1,
+      "validation_mae_pp": 0.28846290723809054
+    }
+  },
+  "selected_rule": {
+    "memory": 0.5,
+    "temperature_pp": 0.02,
+    "validation_mae_pp": 0.2831815910728622
+  },
+  "uniform_validation_mae_pp": 0.2893477649710733,
+  "selection_data": "2024 only; saved before retrospective evaluation"
+}

@@ -1,0 +1,68 @@
+{
+  "model": "compact graph-temporal convolution with city embeddings and residual prediction",
+  "paper_relation": "Architecture inspired by AGCRN and MTGNN; it is not an official reproduction.",
+  "window_months": 6,
+  "graph_top_k": 5,
+  "seeds": [
+    13,
+    31,
+    47
+  ],
+  "training_loss": "Huber with beta=0.25",
+  "selection_metric": "2024 validation MAE",
+  "residual_graph_neighbor_jaccard_2023_to_2024": 0.431,
+  "validation": {
+    "without_graph": {
+      "mae_pp": 0.2948176860809326,
+      "best_epochs_by_seed": [
+        67,
+        87,
+        47
+      ],
+      "individual_seed_mae_pp": [
+        0.3043,
+        0.3,
+        0.3047
+      ]
+    },
+    "raw_graph": {
+      "mae_pp": 0.295608252286911,
+      "best_epochs_by_seed": [
+        76,
+        58,
+        69
+      ],
+      "individual_seed_mae_pp": [
+        0.3084,
+        0.2963,
+        0.3064
+      ]
+    },
+    "residual_graph": {
+      "mae_pp": 0.29476091265678406,
+      "best_epochs_by_seed": [
+        49,
+        57,
+        66
+      ],
+      "individual_seed_mae_pp": [
+        0.2993,
+        0.2996,
+        0.3065
+      ]
+    }
+  },
+  "selected_on_validation": "residual_graph",
+  "exploratory_historical_test": {
+    "without_graph": {
+      "mae_pp": 0.21378758549690247
+    },
+    "raw_graph": {
+      "mae_pp": 0.22211778163909912
+    },
+    "residual_graph": {
+      "mae_pp": 0.2190142720937729
+    }
+  },
+  "methodological_note": "The 2025-Jan2026 period was inspected during earlier model work, so new-model scores are exploratory, not a fresh blind test."
+}

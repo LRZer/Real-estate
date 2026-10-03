@@ -1,0 +1,10 @@
+{
+  "ridge_25": {
+    "loaded_without_retraining": true,
+    "maximum_difference_pp": 8.326672684688674e-17
+  },
+  "fair_tcn": {
+    "loaded_without_retraining": true,
+    "maximum_difference_pp": 8.326672684688674e-17
+  }
+}

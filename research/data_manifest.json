@@ -1,0 +1,9 @@
+{
+  "information_cutoff": "2026-02-28",
+  "historical_pages_retrieved_on": "2026-09-28",
+  "source_index_sha256": "7F1A35D4D8D2D146DB67C08031D96ED7B7B43AF4C9A3216451BDAD75D8221E70",
+  "cleaned_data_sha256": "2C8F96499B410FFA693F17FF11708509E9A3D37C57804BE0E7CD96D7EF324714",
+  "official_release_months": "2021-05 through 2026-01",
+  "rows": 3990,
+  "note": "The study reconstructs the information set available by the cutoff from official pages retrieved later. The project does not prove that those pages were unchanged after their original publication, and its actual development date should not be represented as February 2026."
+}

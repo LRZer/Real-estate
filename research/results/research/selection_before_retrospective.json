@@ -1,0 +1,229 @@
+{
+  "best_simple_baseline": "ridge_25",
+  "best_neural_screened": "fair_tcn",
+  "direction_representative": "multitask_0.05_weighted",
+  "primary": "ridge_25",
+  "price_gates": {
+    "ridge_5": {
+      "relative_mae_gain": -0.0013032209214010049,
+      "months_improved": 6,
+      "half_period_error_changes": [
+        0.019684830047134172,
+        -0.015104821200502383
+      ],
+      "passes_predeclared_price_gate": false
+    },
+    "ridge_25": {
+      "relative_mae_gain": 0.0,
+      "months_improved": 0,
+      "half_period_error_changes": [
+        0.0,
+        0.0
+      ],
+      "passes_predeclared_price_gate": false
+    },
+    "ridge_100": {
+      "relative_mae_gain": -0.021669553256208562,
+      "months_improved": 5,
+      "half_period_error_changes": [
+        0.0067542863266969455,
+        0.03498342182804248
+      ],
+      "passes_predeclared_price_gate": false
+    },
+    "hgb_15": {
+      "relative_mae_gain": -0.053275437281890436,
+      "months_improved": 3,
+      "half_period_error_changes": [
+        0.03221747723531365,
+        0.07207248018940549
+      ],
+      "passes_predeclared_price_gate": false
+    },
+    "hgb_7": {
+      "relative_mae_gain": -0.05151622101928188,
+      "months_improved": 3,
+      "half_period_error_changes": [
+        0.03306525118024717,
+        0.06798617684512975
+      ],
+      "passes_predeclared_price_gate": false
+    },
+    "nlinear": {
+      "relative_mae_gain": -0.02590266896700366,
+      "months_improved": 2,
+      "half_period_error_changes": [
+        0.02210614821903034,
+        0.029291570989852467
+      ],
+      "passes_predeclared_price_gate": false
+    },
+    "legacy_tcn": {
+      "relative_mae_gain": -0.061129630487390285,
+      "months_improved": 3,
+      "half_period_error_changes": [
+        0.04533859153477793,
+        0.07522524260223706
+      ],
+      "passes_predeclared_price_gate": false
+    },
+    "fair_tcn": {
+      "relative_mae_gain": -0.008161599223829974,
+      "months_improved": 3,
+      "half_period_error_changes": [
+        0.019639683460187962,
+        -0.00208412455044249
+      ],
+      "passes_predeclared_price_gate": false
+    },
+    "revin_tcn": {
+      "relative_mae_gain": -0.0301906088807109,
+      "months_improved": 3,
+      "half_period_error_changes": [
+        0.045918175192883215,
+        0.01615165457807133
+      ],
+      "passes_predeclared_price_gate": false
+    },
+    "bias_0.5_0.5": {
+      "relative_mae_gain": 0.007460719839186392,
+      "months_improved": 8,
+      "half_period_error_changes": [
+        0.011147092013598314,
+        -0.02407067811805752
+      ],
+      "passes_predeclared_price_gate": false
+    },
+    "bias_0.5_1.0": {
+      "relative_mae_gain": 0.006867864497875464,
+      "months_improved": 7,
+      "half_period_error_changes": [
+        0.027147591194645715,
+        -0.03723120352771403
+      ],
+      "passes_predeclared_price_gate": false
+    },
+    "bias_0.8_0.5": {
+      "relative_mae_gain": 0.0018660979629794294,
+      "months_improved": 7,
+      "half_period_error_changes": [
+        0.005775373088385161,
+        -0.008687131857589625
+      ],
+      "passes_predeclared_price_gate": false
+    },
+    "bias_0.8_1.0": {
+      "relative_mae_gain": 0.0018357976549140398,
+      "months_improved": 7,
+      "half_period_error_changes": [
+        0.01325940012551241,
+        -0.015310278551853851
+      ],
+      "passes_predeclared_price_gate": false
+    },
+    "decomp_ridge": {
+      "relative_mae_gain": -0.047378755222268865,
+      "months_improved": 3,
+      "half_period_error_changes": [
+        0.09694493601072929,
+        0.003134316303132989
+      ],
+      "passes_predeclared_price_gate": false
+    },
+    "decomp_tcn": {
+      "relative_mae_gain": -0.10884684067291528,
+      "months_improved": 2,
+      "half_period_error_changes": [
+        0.20722154843006324,
+        0.021034270099347552
+      ],
+      "passes_predeclared_price_gate": false
+    },
+    "decomp_revin": {
+      "relative_mae_gain": -0.11140273023342573,
+      "months_improved": 4,
+      "half_period_error_changes": [
+        0.22760131754962942,
+        0.007679965694777469
+      ],
+      "passes_predeclared_price_gate": false
+    },
+    "multitask_0.01_plain": {
+      "relative_mae_gain": -0.10349880262459266,
+      "months_improved": 3,
+      "half_period_error_changes": [
+        0.22709524467321418,
+        -0.006827535694291398
+      ],
+      "passes_predeclared_price_gate": false
+    },
+    "multitask_0.01_weighted": {
+      "relative_mae_gain": -0.1035807011622778,
+      "months_improved": 3,
+      "half_period_error_changes": [
+        0.22235968954461938,
+        -0.002445416096744313
+      ],
+      "passes_predeclared_price_gate": false
+    },
+    "multitask_0.05_plain": {
+      "relative_mae_gain": -0.10537702837909246,
+      "months_improved": 2,
+      "half_period_error_changes": [
+        0.21530428964636594,
+        0.0072522602545324055
+      ],
+      "passes_predeclared_price_gate": false
+    },
+    "multitask_0.05_weighted": {
+      "relative_mae_gain": -0.10695615835322347,
+      "months_improved": 2,
+      "half_period_error_changes": [
+        0.1982047907406137,
+        0.0255045621661234
+      ],
+      "passes_predeclared_price_gate": false
+    }
+  },
+  "direction_gates": {
+    "multitask_0.01_plain": {
+      "relative_overall_mae_change": -0.004823062890342067,
+      "balanced_accuracy_gain": -0.1188538781163434,
+      "relative_rising_mae_gain": 0.008459856583208358,
+      "passes_direction_gate": false
+    },
+    "multitask_0.01_weighted": {
+      "relative_overall_mae_change": -0.0047492036929480674,
+      "balanced_accuracy_gain": -0.06710237765466298,
+      "relative_rising_mae_gain": 0.00718138762831988,
+      "passes_direction_gate": false
+    },
+    "multitask_0.05_plain": {
+      "relative_overall_mae_change": -0.0031292079000893036,
+      "balanced_accuracy_gain": -0.08898891966759004,
+      "relative_rising_mae_gain": 0.0001811253219555775,
+      "passes_direction_gate": false
+    },
+    "multitask_0.05_weighted": {
+      "relative_overall_mae_change": -0.0017050887916535418,
+      "balanced_accuracy_gain": -0.05355493998153271,
+      "relative_rising_mae_gain": 0.006288249545096103,
+      "passes_direction_gate": false
+    }
+  },
+  "retrospective_representatives": [
+    "bias_0.5_0.5",
+    "decomp_ridge",
+    "decomp_tcn",
+    "fair_tcn",
+    "legacy_tcn",
+    "multitask_0.05_weighted",
+    "revin_tcn",
+    "ridge_25"
+  ],
+  "final_five_seed_cases": [
+    "fair_tcn",
+    "multitask_0.05_weighted"
+  ],
+  "selection_data": "2024 only; retrospective period already previously inspected"
+}

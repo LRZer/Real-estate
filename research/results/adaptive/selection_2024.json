@@ -1,0 +1,98 @@
+{
+  "protocol": "monthly past-only rolling-origin validation",
+  "validation_period": "2024-01..2024-12",
+  "neural_fixed_epochs": 60,
+  "policies": [
+    "expanding",
+    "recent_24",
+    "half_life_12"
+  ],
+  "half_life_months": 12,
+  "validation_scores": {
+    "ridge": {
+      "expanding": {
+        "mae_pp": 0.27807730787764895,
+        "bias_pp": -0.02769635678675543,
+        "rising_mae_pp": 0.5036173926661415,
+        "falling_mae_pp": 0.2470309192641021,
+        "balanced_binary_rise_accuracy_excluding_actual_zero": 0.5948032086795937,
+        "balanced_threeway_sign_accuracy_on_nonzero_actual": 0.5948032086795937
+      },
+      "recent_24": {
+        "mae_pp": 0.28156689057981404,
+        "bias_pp": -0.04857535536166084,
+        "rising_mae_pp": 0.5046001694065093,
+        "falling_mae_pp": 0.2505754415429766,
+        "balanced_binary_rise_accuracy_excluding_actual_zero": 0.611120729455217,
+        "balanced_threeway_sign_accuracy_on_nonzero_actual": 0.611120729455217
+      },
+      "half_life_12": {
+        "mae_pp": 0.2798029595758694,
+        "bias_pp": -0.03786782886271399,
+        "rising_mae_pp": 0.4930741764008027,
+        "falling_mae_pp": 0.2503025394324498,
+        "balanced_binary_rise_accuracy_excluding_actual_zero": 0.6201523545706371,
+        "balanced_threeway_sign_accuracy_on_nonzero_actual": 0.6201523545706371
+      }
+    },
+    "temporal_net": {
+      "expanding": {
+        "mae_pp": 0.29565168707000944,
+        "bias_pp": -0.03431780598025182,
+        "rising_mae_pp": 0.47357101111265365,
+        "falling_mae_pp": 0.2726401178695299,
+        "balanced_binary_rise_accuracy_excluding_actual_zero": 0.6410145429362881,
+        "balanced_threeway_sign_accuracy_on_nonzero_actual": 0.6410145429362881
+      },
+      "recent_24": {
+        "mae_pp": 0.2987656126220134,
+        "bias_pp": -0.043574104321167054,
+        "rising_mae_pp": 0.4720018441754898,
+        "falling_mae_pp": 0.2768997588395489,
+        "balanced_binary_rise_accuracy_excluding_actual_zero": 0.6514312096029548,
+        "balanced_threeway_sign_accuracy_on_nonzero_actual": 0.6514312096029548
+      },
+      "half_life_12": {
+        "mae_pp": 0.2959680270717529,
+        "bias_pp": -0.039176097522570105,
+        "rising_mae_pp": 0.47190692883850716,
+        "falling_mae_pp": 0.27344206190368786,
+        "balanced_binary_rise_accuracy_excluding_actual_zero": 0.6573320637119113,
+        "balanced_threeway_sign_accuracy_on_nonzero_actual": 0.6573320637119113
+      }
+    },
+    "residual_graph_net": {
+      "expanding": {
+        "mae_pp": 0.296273029114153,
+        "bias_pp": -0.034035512001996504,
+        "rising_mae_pp": 0.4643181803864233,
+        "falling_mae_pp": 0.2746409792981918,
+        "balanced_binary_rise_accuracy_excluding_actual_zero": 0.6618478762696214,
+        "balanced_threeway_sign_accuracy_on_nonzero_actual": 0.6618478762696214
+      },
+      "recent_24": {
+        "mae_pp": 0.30877073691081025,
+        "bias_pp": -0.07784917622650807,
+        "rising_mae_pp": 0.478884944646173,
+        "falling_mae_pp": 0.2872074404749935,
+        "balanced_binary_rise_accuracy_excluding_actual_zero": 0.6715720221606648,
+        "balanced_threeway_sign_accuracy_on_nonzero_actual": 0.6715720221606648
+      },
+      "half_life_12": {
+        "mae_pp": 0.3041301109948628,
+        "bias_pp": -0.051167194130747315,
+        "rising_mae_pp": 0.4785203261659869,
+        "falling_mae_pp": 0.28195996864194467,
+        "balanced_binary_rise_accuracy_excluding_actual_zero": 0.6729570637119113,
+        "balanced_threeway_sign_accuracy_on_nonzero_actual": 0.6729570637119113
+      }
+    }
+  },
+  "selected_policy_by_family": {
+    "ridge": "expanding",
+    "temporal_net": "expanding",
+    "residual_graph_net": "expanding"
+  },
+  "selected_family": "ridge",
+  "selection_note": "Policies and model family chosen using 2024 only; written before 2025 evaluation."
+}

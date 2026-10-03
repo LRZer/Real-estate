@@ -1,0 +1,7 @@
+﻿feature_group,validation_reference_mae_pp,mean_mae_increase_pp,std_mae_increase_pp,permutations
+calendar,0.2787,0.0196,0.0032,30
+current_new_home,0.2787,0.0194,0.0027,30
+second_hand,0.2787,0.0171,0.0032,30
+city_identity,0.2787,0.0075,0.002,30
+past_new_home,0.2787,0.0052,0.0015,30
+national_new_home,0.2787,0.0041,0.0008,30

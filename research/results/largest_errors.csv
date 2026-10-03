@@ -1,0 +1,13 @@
+﻿target_month,city,target_change_pct,pred_ridge,pred_last_month,ae_ridge,target_source_url
+2025-06,湛江,0.3,-0.6329,-0.1,0.9329,https://www.stats.gov.cn/sj/zxfb/202507/t20250715_1960403.html
+2025-02,无锡,-0.8,0.1159,0.5,0.9159,https://www.stats.gov.cn/sj/zxfb/202503/t20250317_1959009.html
+2025-11,襄阳,0.3,-0.5669,-0.8,0.8669,https://www.stats.gov.cn/sj/zxfb/202512/t20251215_1962069.html
+2025-09,惠州,0.1,-0.7626,-0.9,0.8626,https://www.stats.gov.cn/sj/zxfb/202510/t20251020_1961597.html
+2025-08,宜昌,0.4,-0.4257,0.2,0.8257,https://www.stats.gov.cn/sj/zxfb/202509/t20250915_1961175.html
+2025-07,常德,0.1,-0.716,-0.4,0.816,https://www.stats.gov.cn/sj/zxfb/202508/t20250815_1960781.html
+2025-04,大连,0.5,-0.2968,-0.5,0.7968,https://www.stats.gov.cn/sj/zxfb/202505/t20250519_1959852.html
+2025-08,吉林,0.2,-0.5893,-0.5,0.7893,https://www.stats.gov.cn/sj/zxfb/202509/t20250915_1961175.html
+2025-08,南宁,0.3,-0.4864,0.0,0.7864,https://www.stats.gov.cn/sj/zxfb/202509/t20250915_1961175.html
+2025-07,徐州,0.0,-0.7807,-0.8,0.7807,https://www.stats.gov.cn/sj/zxfb/202508/t20250815_1960781.html
+2025-08,襄阳,0.0,-0.7735,-0.7,0.7735,https://www.stats.gov.cn/sj/zxfb/202509/t20250915_1961175.html
+2025-06,宁波,0.3,-0.4635,-0.1,0.7635,https://www.stats.gov.cn/sj/zxfb/202507/t20250715_1960403.html

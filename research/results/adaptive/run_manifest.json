@@ -1,0 +1,24 @@
+{
+  "extension_development_date": "2026-10-03",
+  "information_cutoff": "2026-02-28",
+  "source_actual_months": [
+    "2021-05",
+    "2026-01"
+  ],
+  "data_sha256": "2c8f96499b410ffa693f17ff11708509e9a3d37c57804be0e7cd96d7ef324714",
+  "code_sha256": {
+    "train_adaptive_backtest.py": "1c4f527b2c87ce0cd83d50837d523f225711f6d7b3dd53e1ba98f9742591e25f",
+    "train_online_ensemble.py": "6d48151eebce7e0bea45b79e0abfb6d8f453351d9a8cbf1d6defb2e961436a14",
+    "verify_adaptive_protocol.py": "f0c64614c5cdb672bf2b629c79cd65d6a94d546208060c9c2b09599fdacc7641",
+    "train_forecast.py": "6870e9850f0a84dec2a63246279ffb90e4ca4e5b6f81342d334fc86b2ef627a8",
+    "train_graph_temporal.py": "060b5c9c57e8e48db31f27d76e36bc0a9fccc8291ca903ecf1cf97f61faabbad"
+  },
+  "environment": {
+    "python": "3.11.7",
+    "pandas": "1.5.3",
+    "numpy": "1.26.4",
+    "sklearn": "1.2.2",
+    "torch": "2.5.1+cpu"
+  },
+  "results_status": "retrospective exploratory extension; not a fresh blind test"
+}

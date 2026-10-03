@@ -1,0 +1,26 @@
+{
+  "quarters": [
+    {
+      "past_validation_end": "2024-03",
+      "next_quarter_start": "2024-04",
+      "chosen": "ridge_100",
+      "next_quarter_mae_pp": 0.30463200211628744,
+      "ridge25_same_quarter_mae_pp": 0.29900484651956444
+    },
+    {
+      "past_validation_end": "2024-06",
+      "next_quarter_start": "2024-07",
+      "chosen": "ridge_25",
+      "next_quarter_mae_pp": 0.2931206206977557,
+      "ridge25_same_quarter_mae_pp": 0.2931206206977557
+    },
+    {
+      "past_validation_end": "2024-09",
+      "next_quarter_start": "2024-10",
+      "chosen": "ridge_25",
+      "next_quarter_mae_pp": 0.29458385029912937,
+      "ridge25_same_quarter_mae_pp": 0.29458385029912937
+    }
+  ],
+  "note": "Uses original three-seed predictions for all 20 configurations. Each quarter chooses using preceding quarters only; five-seed confirmation is excluded."
+}

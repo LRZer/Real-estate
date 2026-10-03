@@ -1,0 +1,9 @@
+* text=auto eol=lf
+# Preserve the exact experiment snapshot bytes for recorded SHA256 checks.
+research/** -text
+*.png binary
+*.svg binary
+*.pdf binary
+*.pt binary
+*.npz binary
+*.joblib binary

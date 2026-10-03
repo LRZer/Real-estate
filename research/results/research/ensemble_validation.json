@@ -1,0 +1,23 @@
+{
+  "online": {
+    "mae_pp": 0.27688735404506887,
+    "bias_pp": -0.03363782075669039,
+    "rising_mae_pp": 0.4874947574343597,
+    "falling_mae_pp": 0.24744637889239768,
+    "balanced_binary_rise_accuracy_excluding_actual_zero": 0.6187673130193906,
+    "balanced_threeway_sign_accuracy_on_nonzero_actual": 0.6187673130193906
+  },
+  "uniform": {
+    "mae_pp": 0.2826426864488691,
+    "bias_pp": -0.0314911209514273,
+    "rising_mae_pp": 0.4708572851834507,
+    "falling_mae_pp": 0.256864276912047,
+    "balanced_binary_rise_accuracy_excluding_actual_zero": 0.6628722299168974,
+    "balanced_threeway_sign_accuracy_on_nonzero_actual": 0.6628722299168974
+  },
+  "post_selection_experts": [
+    "ridge_25",
+    "fair_tcn"
+  ],
+  "note": "Experts selected on full-year validation; this score has additional selection uncertainty."
+}

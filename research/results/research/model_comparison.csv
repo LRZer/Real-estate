@@ -1,0 +1,21 @@
+﻿case,display_name,group,validation_mae_pp,retrospective_mae_pp,price_gate_passed,seed_mae_std_pp
+ridge_5,Ridge α=5,baseline,0.2784397048885418,,False,0.0
+ridge_25,逐月 Ridge,baseline,0.27807730872204833,0.21345415207732904,False,0.0
+ridge_100,Ridge α=100,baseline,0.2841031197727439,,False,0.0
+hgb_15,梯度提升树 15叶,baseline,0.2928919989423867,,False,0.0
+hgb_7,梯度提升树 7叶,baseline,0.29240280081862047,,False,0.0
+nlinear,NLinear 形式,baseline,0.2852802531971108,,False,0.0016184508011653446
+legacy_tcn,六个月原型网络,reference,0.2950760718511551,0.21297642324194005,False,0.0030554437107347607
+fair_tcn,七个月+特征网络,fair_input,0.28034686426907895,0.20672395439861038,False,0.002571646115913957
+revin_tcn,窗口归一化网络,normalization,0.2864726319882764,0.20974816406249314,False,0.0020259248466992564
+bias_0.5_0.5,偏差校正 0.5_0.5,calibration,0.2760026518280382,0.21038671473567216,False,0.0
+bias_0.5_1.0,偏差校正 0.5_1.0,calibration,0.2761675114458114,,False,0.0
+bias_0.8_0.5,偏差校正 0.8_0.5,calibration,0.2775583892226913,,False,0.0
+bias_0.8_1.0,偏差校正 0.8_1.0,calibration,0.2775668150508116,,False,0.0
+decomp_ridge,双分支 Ridge,decomposition,0.29125226546485755,0.20322955672182588,False,0.0
+decomp_tcn,双分支网络,decomposition,0.3083451452392702,0.21414581566618546,False,0.009093910803163621
+decomp_revin,归一化双分支,decomposition,0.30905588012964774,,False,0.01140719903826313
+multitask_0.01_plain,方向任务 0.01_不加权,direction,0.30685797721184954,,False,0.010434464292863176
+multitask_0.01_weighted,方向任务 0.01_加权,direction,0.30688075133679726,,False,0.009895058093812211
+multitask_0.05_plain,方向任务 0.05_不加权,direction,0.3073802691748333,,False,0.009842711774317869
+multitask_0.05_weighted,方向任务 0.05_加权,direction,0.30781938938816195,0.21089092912014246,False,0.012213092925068428

@@ -1,0 +1,78 @@
+{
+  "data_quality": {
+    "city_month_rows": 3990,
+    "distinct_cities": 70,
+    "distinct_months": 57,
+    "missing_cells": 0,
+    "new_home_change_range_pct": [
+      -2.1,
+      1.9
+    ],
+    "second_hand_change_range_pct": [
+      -2.2,
+      2.0
+    ],
+    "source_urls": 57
+  },
+  "paired_month_bootstrap": {
+    "number_of_month_clusters": 13,
+    "ridge_mae_gain_over_last_month_pp": 0.0253,
+    "independent_month_bootstrap_95pct_interval_pp": [
+      0.0009,
+      0.0464
+    ],
+    "circular_three_month_block_bootstrap_95pct_interval_pp": [
+      -0.0068,
+      0.0495
+    ],
+    "bootstrap_repetitions": 20000,
+    "interpretation": "Exploratory uncertainty across 13 months; neither interval guarantees future gains."
+  },
+  "sensitivity_to_2026_january": {
+    "2025_only": {
+      "rows": 840,
+      "last_month_mae_pp": 0.251,
+      "ridge_mae_pp": 0.2282
+    },
+    "2026_january_only": {
+      "rows": 70,
+      "last_month_mae_pp": 0.2214,
+      "ridge_mae_pp": 0.1664
+    }
+  },
+  "test_target_direction_counts": {
+    "falling": 705,
+    "unchanged": 45,
+    "rising": 160
+  },
+  "test_error_by_actual_direction": {
+    "falling": {
+      "rows": 705,
+      "last_month_mae_pp": 0.2379,
+      "ridge_mae_pp": 0.186
+    },
+    "unchanged": {
+      "rows": 45,
+      "last_month_mae_pp": 0.2756,
+      "ridge_mae_pp": 0.2786
+    },
+    "rising": {
+      "rows": 160,
+      "last_month_mae_pp": 0.2888,
+      "ridge_mae_pp": 0.3727
+    }
+  },
+  "balanced_rise_vs_fall_accuracy_excluding_unchanged": {
+    "last_month": 0.7239,
+    "ridge": 0.6254,
+    "gradient_boosting": 0.6254
+  },
+  "worst_month_for_ridge": "2025-08",
+  "best_monthly_gain": "2025-03",
+  "worst_monthly_gain": "2025-08",
+  "notes": [
+    "All feature importance calculations use 2024 validation data only.",
+    "Correlated features can share importance; a low value does not imply a feature has no causal effect.",
+    "Test diagnostics are exploratory and are not used to change the selected model."
+  ]
+}

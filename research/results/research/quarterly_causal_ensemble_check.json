@@ -1,0 +1,32 @@
+{
+  "quarters": [
+    {
+      "choose_through_month": "2024-03",
+      "evaluate_quarter_start": "2024-04",
+      "baseline_expert": "ridge_100",
+      "nonlinear_expert": "fair_tcn",
+      "online_mae_pp": 0.3022594020627892,
+      "uniform_mae_pp": 0.3062093202273772,
+      "ridge25_mae_pp": 0.2990048465195645
+    },
+    {
+      "choose_through_month": "2024-06",
+      "evaluate_quarter_start": "2024-07",
+      "baseline_expert": "ridge_25",
+      "nonlinear_expert": "fair_tcn",
+      "online_mae_pp": 0.29128550446097984,
+      "uniform_mae_pp": 0.29382308723432254,
+      "ridge25_mae_pp": 0.29312062069775574
+    },
+    {
+      "choose_through_month": "2024-09",
+      "evaluate_quarter_start": "2024-10",
+      "baseline_expert": "ridge_25",
+      "nonlinear_expert": "fair_tcn",
+      "online_mae_pp": 0.29094026014711044,
+      "uniform_mae_pp": 0.3068945324366602,
+      "ridge25_mae_pp": 0.29458385029912937
+    }
+  ],
+  "uses_original_three_seed_screening_only": true
+}

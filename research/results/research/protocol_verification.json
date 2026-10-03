@@ -1,0 +1,18 @@
+{
+  "same_city_month_alignment": true,
+  "same_19_numeric_features": true,
+  "ridge_25_future_invariance": true,
+  "hgb_7_future_invariance": true,
+  "nlinear_future_invariance": true,
+  "fair_tcn_future_invariance": true,
+  "revin_tcn_future_invariance": true,
+  "decomp_ridge_future_invariance": true,
+  "decomp_revin_future_invariance": true,
+  "multitask_0.05_weighted_future_invariance": true,
+  "past_only_normalizers": true,
+  "bias_predict_before_update": true,
+  "ensemble_predict_before_update": true,
+  "ridge_reproduces_previous_implementation": true,
+  "fit_cutoffs_checked": 315,
+  "saved_city_month_predictions_checked": 1820
+}

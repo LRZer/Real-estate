@@ -1,0 +1,9 @@
+{
+  "ridge_future_data_invariance": true,
+  "residual_graph_net_future_data_invariance": true,
+  "ensemble_predict_before_label_update": true,
+  "past_only_cutoff_rows_checked": 153,
+  "city_month_predictions_checked": 910,
+  "fixed_ridge_reproduces_original": true,
+  "half_life_weight_check": true
+}

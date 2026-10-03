@@ -1,0 +1,17 @@
+cff-version: 1.2.0
+message: "If you use this dataset reconstruction, code, or experiment records, cite this repository and the original National Bureau of Statistics releases."
+title: "Adaptive Forecasting of New-Home Price Movements Across 70 Chinese Cities"
+type: software
+authors:
+  - name: "LRZer"
+    website: "https://github.com/LRZer"
+repository-code: "https://github.com/LRZer/Real-estate"
+url: "https://github.com/LRZer/Real-estate"
+date-released: "2026-10-04"
+abstract: "Official-data reconstruction and rolling-origin experiments for one-month new-home price-index movement prediction across 70 mainland Chinese cities."
+keywords:
+  - housing price indices
+  - time series forecasting
+  - rolling-origin evaluation
+  - temporal convolution
+  - distribution shift

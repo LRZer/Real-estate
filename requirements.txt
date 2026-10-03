@@ -1,0 +1,2 @@
+# Model reproduction and experiment dependencies; Python 3.11.
+-r research/requirements-tested.txt

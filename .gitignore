@@ -1,0 +1,15 @@
+.venv/
+venv/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.ruff_cache/
+.env
+.env.*
+research/data/official_pages/
+research/results/research/cache/
+research/tmp/
+tmp/
+*.zip
+.DS_Store
+Thumbs.db

@@ -1,0 +1,60 @@
+{
+  "algorithm": "shared-city EWMA expert risk -> softmax weights -> weighted prediction",
+  "research_relation": "Inspired by OneNet (NeurIPS 2023) online ensembling; not a reproduction and no RL implementation.",
+  "selected_rule": {
+    "memory": 0.5,
+    "temperature_pp": 0.02,
+    "validation_mae_pp": 0.2831815910728622
+  },
+  "validation": {
+    "mae_pp": 0.2831815910728622,
+    "bias_pp": -0.03346519935465978,
+    "rising_mae_pp": 0.48097712278086746,
+    "falling_mae_pp": 0.2565231113546172,
+    "balanced_binary_rise_accuracy_excluding_actual_zero": 0.6323147506925209,
+    "balanced_threeway_sign_accuracy_on_nonzero_actual": 0.6323147506925209
+  },
+  "beats_selected_single_model_on_validation": false,
+  "retrospective": {
+    "online_ensemble": {
+      "mae_pp": 0.20724506387426622,
+      "bias_pp": -0.02861844190834179,
+      "rising_mae_pp": 0.3231511638836727,
+      "falling_mae_pp": 0.1782199061459455,
+      "balanced_binary_rise_accuracy_excluding_actual_zero": 0.6628102836879433,
+      "balanced_threeway_sign_accuracy_on_nonzero_actual": 0.6628102836879433
+    },
+    "uniform_ensemble": {
+      "mae_pp": 0.2103355208658668,
+      "bias_pp": -0.019034705760144762,
+      "rising_mae_pp": 0.31054224219243615,
+      "falling_mae_pp": 0.1851749753473783,
+      "balanced_binary_rise_accuracy_excluding_actual_zero": 0.692508865248227,
+      "balanced_threeway_sign_accuracy_on_nonzero_actual": 0.692508865248227
+    }
+  },
+  "summer_2025": {
+    "mae_pp": 0.21333798918681005,
+    "bias_pp": -0.1008968737636507,
+    "rising_mae_pp": 0.38977065398115596,
+    "falling_mae_pp": 0.17260030238706822,
+    "balanced_binary_rise_accuracy_excluding_actual_zero": 0.5976679290412598,
+    "balanced_threeway_sign_accuracy_on_nonzero_actual": 0.5976679290412598
+  },
+  "gain_vs_last_month_baseline": {
+    "mean_monthly_mae_gain_pp": 0.04143625661320419,
+    "circular_3month_block_95pct_interval_pp": [
+      0.034275432606300386,
+      0.04669492579151021
+    ],
+    "months_beating_baseline": 13
+  },
+  "as_of_2026_02_expert_weights": {
+    "ridge": 0.35599383973939486,
+    "temporal_net": 0.346406314668586,
+    "residual_graph_net": 0.26880591940573095,
+    "last_month": 0.02879392618628828
+  },
+  "future_label_invariance_check": true,
+  "methodological_note": "All 2025-Jan2026 outcomes were inspected before this extension. The comparisons are retrospective, not a new blind test; the small validation grid also adds selection uncertainty."
+}

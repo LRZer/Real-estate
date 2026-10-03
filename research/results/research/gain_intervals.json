@@ -1,0 +1,82 @@
+{
+  "bias_0.5_0.5": {
+    "mean_monthly_mae_gain_pp": 0.03829460501329014,
+    "circular_3month_block_95pct_interval_pp": [
+      0.024437252603980338,
+      0.04842450119668616
+    ],
+    "months_beating_baseline": 12
+  },
+  "decomp_ridge": {
+    "mean_monthly_mae_gain_pp": 0.045451763027136445,
+    "circular_3month_block_95pct_interval_pp": [
+      0.03767280178952774,
+      0.05231796733473165
+    ],
+    "months_beating_baseline": 13
+  },
+  "decomp_tcn": {
+    "mean_monthly_mae_gain_pp": 0.03453550408277687,
+    "circular_3month_block_95pct_interval_pp": [
+      0.02225120910358021,
+      0.04663410855263372
+    ],
+    "months_beating_baseline": 12
+  },
+  "fair_tcn": {
+    "mean_monthly_mae_gain_pp": 0.04195736535035195,
+    "circular_3month_block_95pct_interval_pp": [
+      0.03225683540973682,
+      0.050434678411388593
+    ],
+    "months_beating_baseline": 13
+  },
+  "legacy_tcn": {
+    "mean_monthly_mae_gain_pp": 0.03570489650702227,
+    "circular_3month_block_95pct_interval_pp": [
+      0.027791769797606693,
+      0.043017806501946525
+    ],
+    "months_beating_baseline": 13
+  },
+  "multitask_0.05_weighted": {
+    "mean_monthly_mae_gain_pp": 0.03779039062881986,
+    "circular_3month_block_95pct_interval_pp": [
+      0.026115747900976503,
+      0.04944613484507695
+    ],
+    "months_beating_baseline": 12
+  },
+  "revin_tcn": {
+    "mean_monthly_mae_gain_pp": 0.038933155686469184,
+    "circular_3month_block_95pct_interval_pp": [
+      0.03259914589945801,
+      0.04483004348744973
+    ],
+    "months_beating_baseline": 12
+  },
+  "ridge_25": {
+    "mean_monthly_mae_gain_pp": 0.03522716767163325,
+    "circular_3month_block_95pct_interval_pp": [
+      0.014592637465649407,
+      0.0498877507466566
+    ],
+    "months_beating_baseline": 12
+  },
+  "online_ensemble": {
+    "mean_monthly_mae_gain_pp": 0.04299228802969966,
+    "circular_3month_block_95pct_interval_pp": [
+      0.03138336676794578,
+      0.05131041037938484
+    ],
+    "months_beating_baseline": 12
+  },
+  "uniform_ensemble": {
+    "mean_monthly_mae_gain_pp": 0.040156250854276036,
+    "circular_3month_block_95pct_interval_pp": [
+      0.03471628939438084,
+      0.044623436818751534
+    ],
+    "months_beating_baseline": 13
+  }
+}

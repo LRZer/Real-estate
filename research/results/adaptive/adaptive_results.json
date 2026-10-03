@@ -1,0 +1,469 @@
+{
+  "protocol": "monthly past-only rolling-origin validation",
+  "validation_period": "2024-01..2024-12",
+  "neural_fixed_epochs": 60,
+  "policies": [
+    "expanding",
+    "recent_24",
+    "half_life_12"
+  ],
+  "half_life_months": 12,
+  "validation_scores": {
+    "ridge": {
+      "expanding": {
+        "mae_pp": 0.27807730787764895,
+        "bias_pp": -0.02769635678675543,
+        "rising_mae_pp": 0.5036173926661415,
+        "falling_mae_pp": 0.2470309192641021,
+        "balanced_binary_rise_accuracy_excluding_actual_zero": 0.5948032086795937,
+        "balanced_threeway_sign_accuracy_on_nonzero_actual": 0.5948032086795937
+      },
+      "recent_24": {
+        "mae_pp": 0.28156689057981404,
+        "bias_pp": -0.04857535536166084,
+        "rising_mae_pp": 0.5046001694065093,
+        "falling_mae_pp": 0.2505754415429766,
+        "balanced_binary_rise_accuracy_excluding_actual_zero": 0.611120729455217,
+        "balanced_threeway_sign_accuracy_on_nonzero_actual": 0.611120729455217
+      },
+      "half_life_12": {
+        "mae_pp": 0.2798029595758694,
+        "bias_pp": -0.03786782886271399,
+        "rising_mae_pp": 0.4930741764008027,
+        "falling_mae_pp": 0.2503025394324498,
+        "balanced_binary_rise_accuracy_excluding_actual_zero": 0.6201523545706371,
+        "balanced_threeway_sign_accuracy_on_nonzero_actual": 0.6201523545706371
+      }
+    },
+    "temporal_net": {
+      "expanding": {
+        "mae_pp": 0.29565168707000944,
+        "bias_pp": -0.03431780598025182,
+        "rising_mae_pp": 0.47357101111265365,
+        "falling_mae_pp": 0.2726401178695299,
+        "balanced_binary_rise_accuracy_excluding_actual_zero": 0.6410145429362881,
+        "balanced_threeway_sign_accuracy_on_nonzero_actual": 0.6410145429362881
+      },
+      "recent_24": {
+        "mae_pp": 0.2987656126220134,
+        "bias_pp": -0.043574104321167054,
+        "rising_mae_pp": 0.4720018441754898,
+        "falling_mae_pp": 0.2768997588395489,
+        "balanced_binary_rise_accuracy_excluding_actual_zero": 0.6514312096029548,
+        "balanced_threeway_sign_accuracy_on_nonzero_actual": 0.6514312096029548
+      },
+      "half_life_12": {
+        "mae_pp": 0.2959680270717529,
+        "bias_pp": -0.039176097522570105,
+        "rising_mae_pp": 0.47190692883850716,
+        "falling_mae_pp": 0.27344206190368786,
+        "balanced_binary_rise_accuracy_excluding_actual_zero": 0.6573320637119113,
+        "balanced_threeway_sign_accuracy_on_nonzero_actual": 0.6573320637119113
+      }
+    },
+    "residual_graph_net": {
+      "expanding": {
+        "mae_pp": 0.296273029114153,
+        "bias_pp": -0.034035512001996504,
+        "rising_mae_pp": 0.4643181803864233,
+        "falling_mae_pp": 0.2746409792981918,
+        "balanced_binary_rise_accuracy_excluding_actual_zero": 0.6618478762696214,
+        "balanced_threeway_sign_accuracy_on_nonzero_actual": 0.6618478762696214
+      },
+      "recent_24": {
+        "mae_pp": 0.30877073691081025,
+        "bias_pp": -0.07784917622650807,
+        "rising_mae_pp": 0.478884944646173,
+        "falling_mae_pp": 0.2872074404749935,
+        "balanced_binary_rise_accuracy_excluding_actual_zero": 0.6715720221606648,
+        "balanced_threeway_sign_accuracy_on_nonzero_actual": 0.6715720221606648
+      },
+      "half_life_12": {
+        "mae_pp": 0.3041301109948628,
+        "bias_pp": -0.051167194130747315,
+        "rising_mae_pp": 0.4785203261659869,
+        "falling_mae_pp": 0.28195996864194467,
+        "balanced_binary_rise_accuracy_excluding_actual_zero": 0.6729570637119113,
+        "balanced_threeway_sign_accuracy_on_nonzero_actual": 0.6729570637119113
+      }
+    }
+  },
+  "selected_policy_by_family": {
+    "ridge": "expanding",
+    "temporal_net": "expanding",
+    "residual_graph_net": "expanding"
+  },
+  "selected_family": "ridge",
+  "selection_note": "Policies and model family chosen using 2024 only; written before 2025 evaluation.",
+  "as_of_date": "2026-02-28",
+  "latest_actual_month": "2026-01",
+  "retrospective_period": "2025-01..2026-01",
+  "retrospective_scores": {
+    "last_month": {
+      "mae_pp": 0.2486813204874704,
+      "bias_pp": 0.02164835193818742,
+      "rising_mae_pp": 0.28875000444240867,
+      "falling_mae_pp": 0.23787234141260175,
+      "balanced_binary_rise_accuracy_excluding_actual_zero": 0.723936170212766,
+      "balanced_threeway_sign_accuracy_on_nonzero_actual": 0.697695035460993
+    },
+    "original_frozen_ridge": {
+      "mae_pp": 0.22341184406282463,
+      "bias_pp": -0.07354169960445828,
+      "rising_mae_pp": 0.37274425905315034,
+      "falling_mae_pp": 0.1859966581153203,
+      "balanced_binary_rise_accuracy_excluding_actual_zero": 0.6254432624113475,
+      "balanced_threeway_sign_accuracy_on_nonzero_actual": 0.6254432624113475
+    },
+    "frozen_ridge": {
+      "mae_pp": 0.22341184406282594,
+      "bias_pp": -0.07354169960446164,
+      "rising_mae_pp": 0.3727442590531532,
+      "falling_mae_pp": 0.18599665811532118,
+      "balanced_binary_rise_accuracy_excluding_actual_zero": 0.6254432624113475,
+      "balanced_threeway_sign_accuracy_on_nonzero_actual": 0.6254432624113475
+    },
+    "rolling_ridge": {
+      "mae_pp": 0.21345415308766016,
+      "bias_pp": -0.04236720112342977,
+      "rising_mae_pp": 0.3491483509466521,
+      "falling_mae_pp": 0.17982305497181347,
+      "balanced_binary_rise_accuracy_excluding_actual_zero": 0.6351063829787233,
+      "balanced_threeway_sign_accuracy_on_nonzero_actual": 0.6351063829787233
+    },
+    "frozen_temporal_net": {
+      "mae_pp": 0.21556106344182657,
+      "bias_pp": -0.0339649521408009,
+      "rising_mae_pp": 0.33957512042688903,
+      "falling_mae_pp": 0.18466252201857666,
+      "balanced_binary_rise_accuracy_excluding_actual_zero": 0.661258865248227,
+      "balanced_threeway_sign_accuracy_on_nonzero_actual": 0.661258865248227
+    },
+    "rolling_temporal_net": {
+      "mae_pp": 0.21278862177911165,
+      "bias_pp": -0.02527464719484099,
+      "rising_mae_pp": 0.32756691686226985,
+      "falling_mae_pp": 0.18389947887655375,
+      "balanced_binary_rise_accuracy_excluding_actual_zero": 0.676174645390071,
+      "balanced_threeway_sign_accuracy_on_nonzero_actual": 0.676174645390071
+    },
+    "frozen_residual_graph_net": {
+      "mae_pp": 0.21666588542732196,
+      "bias_pp": -0.03937337971292435,
+      "rising_mae_pp": 0.3407616362856061,
+      "falling_mae_pp": 0.18550916164750167,
+      "balanced_binary_rise_accuracy_excluding_actual_zero": 0.6646719858156028,
+      "balanced_threeway_sign_accuracy_on_nonzero_actual": 0.6646719858156028
+    },
+    "rolling_residual_graph_net": {
+      "mae_pp": 0.21412190047635155,
+      "bias_pp": -0.030145326660495696,
+      "rising_mae_pp": 0.3313496362316073,
+      "falling_mae_pp": 0.18473821581252156,
+      "balanced_binary_rise_accuracy_excluding_actual_zero": 0.6685062056737588,
+      "balanced_threeway_sign_accuracy_on_nonzero_actual": 0.6685062056737588
+    },
+    "rolling_expanding_ridge": {
+      "mae_pp": 0.21345415308766016,
+      "bias_pp": -0.04236720112342977,
+      "rising_mae_pp": 0.3491483509466521,
+      "falling_mae_pp": 0.17982305497181347,
+      "balanced_binary_rise_accuracy_excluding_actual_zero": 0.6351063829787233,
+      "balanced_threeway_sign_accuracy_on_nonzero_actual": 0.6351063829787233
+    }
+  },
+  "gain_vs_last_month_baseline": {
+    "original_frozen_ridge": {
+      "mean_monthly_mae_gain_pp": 0.02526947800482386,
+      "circular_3month_block_95pct_interval_pp": [
+        -0.006143463131907353,
+        0.049412436738833915
+      ],
+      "months_beating_baseline": 10
+    },
+    "frozen_ridge": {
+      "mean_monthly_mae_gain_pp": 0.025269478004822585,
+      "circular_3month_block_95pct_interval_pp": [
+        -0.006143463131909943,
+        0.049412436738833825
+      ],
+      "months_beating_baseline": 10
+    },
+    "rolling_ridge": {
+      "mean_monthly_mae_gain_pp": 0.03522716897998836,
+      "circular_3month_block_95pct_interval_pp": [
+        0.01459263980378239,
+        0.04988775038329787
+      ],
+      "months_beating_baseline": 12
+    },
+    "frozen_temporal_net": {
+      "mean_monthly_mae_gain_pp": 0.033120255917310715,
+      "circular_3month_block_95pct_interval_pp": [
+        0.02645348571240902,
+        0.03956469148397446
+      ],
+      "months_beating_baseline": 13
+    },
+    "rolling_temporal_net": {
+      "mean_monthly_mae_gain_pp": 0.03589269891381264,
+      "circular_3month_block_95pct_interval_pp": [
+        0.027668101713061333,
+        0.04353955760598183
+      ],
+      "months_beating_baseline": 13
+    },
+    "frozen_residual_graph_net": {
+      "mean_monthly_mae_gain_pp": 0.03201543539762497,
+      "circular_3month_block_95pct_interval_pp": [
+        0.02597099533304572,
+        0.03869176236912608
+      ],
+      "months_beating_baseline": 13
+    },
+    "rolling_residual_graph_net": {
+      "mean_monthly_mae_gain_pp": 0.03455942124128342,
+      "circular_3month_block_95pct_interval_pp": [
+        0.028491584584116936,
+        0.04033571109175682
+      ],
+      "months_beating_baseline": 13
+    },
+    "rolling_expanding_ridge": {
+      "mean_monthly_mae_gain_pp": 0.03522716897998836,
+      "circular_3month_block_95pct_interval_pp": [
+        0.01459263980378239,
+        0.04988775038329787
+      ],
+      "months_beating_baseline": 12
+    }
+  },
+  "segments": {
+    "2025_Jun_Aug": {
+      "last_month": {
+        "mae_pp": 0.24190476529655003,
+        "bias_pp": 0.024761905556633358,
+        "rising_mae_pp": 0.27241379767656326,
+        "falling_mae_pp": 0.22774566791822456,
+        "balanced_binary_rise_accuracy_excluding_actual_zero": 0.7296192943990433,
+        "balanced_threeway_sign_accuracy_on_nonzero_actual": 0.7122782539366155
+      },
+      "original_frozen_ridge": {
+        "mae_pp": 0.2883747040492629,
+        "bias_pp": -0.24760934624284525,
+        "rising_mae_pp": 0.5781852487381279,
+        "falling_mae_pp": 0.22459605970116656,
+        "balanced_binary_rise_accuracy_excluding_actual_zero": 0.5172413793103449,
+        "balanced_threeway_sign_accuracy_on_nonzero_actual": 0.5172413793103449
+      },
+      "frozen_ridge": {
+        "mae_pp": 0.2883747040492672,
+        "bias_pp": -0.24760934624285147,
+        "rising_mae_pp": 0.5781852487381337,
+        "falling_mae_pp": 0.22459605970117044,
+        "balanced_binary_rise_accuracy_excluding_actual_zero": 0.5172413793103449,
+        "balanced_threeway_sign_accuracy_on_nonzero_actual": 0.5172413793103449
+      },
+      "rolling_ridge": {
+        "mae_pp": 0.2502517375181777,
+        "bias_pp": -0.1905717179893806,
+        "rising_mae_pp": 0.5169584341954918,
+        "falling_mae_pp": 0.19202536934195766,
+        "balanced_binary_rise_accuracy_excluding_actual_zero": 0.5344827586206896,
+        "balanced_threeway_sign_accuracy_on_nonzero_actual": 0.5344827586206896
+      },
+      "frozen_temporal_net": {
+        "mae_pp": 0.2117203191743188,
+        "bias_pp": -0.07991165238476935,
+        "rising_mae_pp": 0.35820448826516754,
+        "falling_mae_pp": 0.17585785091165562,
+        "balanced_binary_rise_accuracy_excluding_actual_zero": 0.6637432728722343,
+        "balanced_threeway_sign_accuracy_on_nonzero_actual": 0.6637432728722343
+      },
+      "rolling_temporal_net": {
+        "mae_pp": 0.20763332635341655,
+        "bias_pp": -0.0746874837914393,
+        "rising_mae_pp": 0.3505791086575081,
+        "falling_mae_pp": 0.17293673901242673,
+        "balanced_binary_rise_accuracy_excluding_actual_zero": 0.6637432728722343,
+        "balanced_threeway_sign_accuracy_on_nonzero_actual": 0.6637432728722343
+      },
+      "frozen_residual_graph_net": {
+        "mae_pp": 0.21980813781764091,
+        "bias_pp": -0.10265363837936006,
+        "rising_mae_pp": 0.400188980852896,
+        "falling_mae_pp": 0.17741417952253338,
+        "balanced_binary_rise_accuracy_excluding_actual_zero": 0.6321506876619494,
+        "balanced_threeway_sign_accuracy_on_nonzero_actual": 0.6321506876619494
+      },
+      "rolling_residual_graph_net": {
+        "mae_pp": 0.2131830840238503,
+        "bias_pp": -0.08748667428181285,
+        "rising_mae_pp": 0.377898713381126,
+        "falling_mae_pp": 0.1741933771812847,
+        "balanced_binary_rise_accuracy_excluding_actual_zero": 0.6149093083516045,
+        "balanced_threeway_sign_accuracy_on_nonzero_actual": 0.6149093083516045
+      },
+      "rolling_expanding_ridge": {
+        "mae_pp": 0.2502517375181777,
+        "bias_pp": -0.1905717179893806,
+        "rising_mae_pp": 0.5169584341954918,
+        "falling_mae_pp": 0.19202536934195766,
+        "balanced_binary_rise_accuracy_excluding_actual_zero": 0.5344827586206896,
+        "balanced_threeway_sign_accuracy_on_nonzero_actual": 0.5344827586206896
+      }
+    },
+    "2025_only": {
+      "last_month": {
+        "mae_pp": 0.25095238311304935,
+        "bias_pp": 0.023809524075615974,
+        "rising_mae_pp": 0.2864516174120288,
+        "falling_mae_pp": 0.2402799391704807,
+        "balanced_binary_rise_accuracy_excluding_actual_zero": 0.7309938293282496,
+        "balanced_threeway_sign_accuracy_on_nonzero_actual": 0.7053328650980786
+      },
+      "original_frozen_ridge": {
+        "mae_pp": 0.22816078292568379,
+        "bias_pp": -0.08017445163111325,
+        "rising_mae_pp": 0.3698367820031461,
+        "falling_mae_pp": 0.19030572102910037,
+        "balanced_binary_rise_accuracy_excluding_actual_zero": 0.6287161992675463,
+        "balanced_threeway_sign_accuracy_on_nonzero_actual": 0.6287161992675463
+      },
+      "frozen_ridge": {
+        "mae_pp": 0.22816078292568523,
+        "bias_pp": -0.08017445163111675,
+        "rising_mae_pp": 0.369836782003149,
+        "falling_mae_pp": 0.19030572102910134,
+        "balanced_binary_rise_accuracy_excluding_actual_zero": 0.6287161992675463,
+        "balanced_threeway_sign_accuracy_on_nonzero_actual": 0.6287161992675463
+      },
+      "rolling_ridge": {
+        "mae_pp": 0.21726736196963348,
+        "bias_pp": -0.04826815165339812,
+        "rising_mae_pp": 0.34685624819258654,
+        "falling_mae_pp": 0.18310123177311027,
+        "balanced_binary_rise_accuracy_excluding_actual_zero": 0.6385090051673106,
+        "balanced_threeway_sign_accuracy_on_nonzero_actual": 0.6385090051673106
+      },
+      "frozen_temporal_net": {
+        "mae_pp": 0.2196576596720011,
+        "bias_pp": -0.038931427989155054,
+        "rising_mae_pp": 0.33555626801155025,
+        "falling_mae_pp": 0.1886854486921614,
+        "balanced_binary_rise_accuracy_excluding_actual_zero": 0.6655546079365875,
+        "balanced_threeway_sign_accuracy_on_nonzero_actual": 0.6655546079365875
+      },
+      "rolling_temporal_net": {
+        "mae_pp": 0.2164305434548407,
+        "bias_pp": -0.02848439041186966,
+        "rising_mae_pp": 0.3239402197000961,
+        "falling_mae_pp": 0.18753432866090308,
+        "balanced_binary_rise_accuracy_excluding_actual_zero": 0.6809060352179802,
+        "balanced_threeway_sign_accuracy_on_nonzero_actual": 0.6809060352179802
+      },
+      "frozen_residual_graph_net": {
+        "mae_pp": 0.2203475620084819,
+        "bias_pp": -0.04426023736208056,
+        "rising_mae_pp": 0.33662878312846467,
+        "falling_mae_pp": 0.1889416862870849,
+        "balanced_binary_rise_accuracy_excluding_actual_zero": 0.6688958009331261,
+        "balanced_threeway_sign_accuracy_on_nonzero_actual": 0.6688958009331261
+      },
+      "rolling_residual_graph_net": {
+        "mae_pp": 0.2172636829316616,
+        "bias_pp": -0.03304560414703918,
+        "rising_mae_pp": 0.32749728595447397,
+        "falling_mae_pp": 0.1877872575178357,
+        "balanced_binary_rise_accuracy_excluding_actual_zero": 0.6728992123614107,
+        "balanced_threeway_sign_accuracy_on_nonzero_actual": 0.6728992123614107
+      },
+      "rolling_expanding_ridge": {
+        "mae_pp": 0.21726736196963348,
+        "bias_pp": -0.04826815165339812,
+        "rising_mae_pp": 0.34685624819258654,
+        "falling_mae_pp": 0.18310123177311027,
+        "balanced_binary_rise_accuracy_excluding_actual_zero": 0.6385090051673106,
+        "balanced_threeway_sign_accuracy_on_nonzero_actual": 0.6385090051673106
+      }
+    },
+    "2026_Jan_only": {
+      "last_month": {
+        "mae_pp": 0.22142856898052352,
+        "bias_pp": -0.004285713710955212,
+        "rising_mae_pp": 0.3600000023841858,
+        "falling_mae_pp": 0.21290322273008286,
+        "balanced_binary_rise_accuracy_excluding_actual_zero": 0.46774193548387094,
+        "balanced_threeway_sign_accuracy_on_nonzero_actual": 0.43548387096774194
+      },
+      "original_frozen_ridge": {
+        "mae_pp": 0.1664245777085147,
+        "bias_pp": 0.0060513247154016315,
+        "rising_mae_pp": 0.4628760476032793,
+        "falling_mae_pp": 0.1413075056385366,
+        "balanced_binary_rise_accuracy_excluding_actual_zero": 0.5,
+        "balanced_threeway_sign_accuracy_on_nonzero_actual": 0.5
+      },
+      "frozen_ridge": {
+        "mae_pp": 0.1664245777085146,
+        "bias_pp": 0.0060513247153997085,
+        "rising_mae_pp": 0.46287604760328105,
+        "falling_mae_pp": 0.14130750563853636,
+        "balanced_binary_rise_accuracy_excluding_actual_zero": 0.5,
+        "balanced_threeway_sign_accuracy_on_nonzero_actual": 0.5
+      },
+      "rolling_ridge": {
+        "mae_pp": 0.16769564650398022,
+        "bias_pp": 0.0284442052361905,
+        "rising_mae_pp": 0.42020353632268553,
+        "falling_mae_pp": 0.1458251891132031,
+        "balanced_binary_rise_accuracy_excluding_actual_zero": 0.5,
+        "balanced_threeway_sign_accuracy_on_nonzero_actual": 0.5
+      },
+      "frozen_temporal_net": {
+        "mae_pp": 0.16640190867973226,
+        "bias_pp": 0.025632758039448946,
+        "rising_mae_pp": 0.46415954530239106,
+        "falling_mae_pp": 0.14294087925865764,
+        "balanced_binary_rise_accuracy_excluding_actual_zero": 0.49193548387096775,
+        "balanced_threeway_sign_accuracy_on_nonzero_actual": 0.49193548387096775
+      },
+      "rolling_temporal_net": {
+        "mae_pp": 0.16908556167036295,
+        "bias_pp": 0.013242271409503051,
+        "rising_mae_pp": 0.43999452888965607,
+        "falling_mae_pp": 0.14620256901628548,
+        "balanced_binary_rise_accuracy_excluding_actual_zero": 0.49193548387096775,
+        "balanced_threeway_sign_accuracy_on_nonzero_actual": 0.49193548387096775
+      },
+      "frozen_residual_graph_net": {
+        "mae_pp": 0.17248576645340238,
+        "bias_pp": 0.019268912076950077,
+        "rising_mae_pp": 0.46888008415699006,
+        "falling_mae_pp": 0.1499105593369853,
+        "balanced_binary_rise_accuracy_excluding_actual_zero": 0.49193548387096775,
+        "balanced_threeway_sign_accuracy_on_nonzero_actual": 0.49193548387096775
+      },
+      "rolling_residual_graph_net": {
+        "mae_pp": 0.17642051101263082,
+        "bias_pp": 0.004658003178026,
+        "rising_mae_pp": 0.45077249482274057,
+        "falling_mae_pp": 0.15311670264289265,
+        "balanced_binary_rise_accuracy_excluding_actual_zero": 0.49193548387096775,
+        "balanced_threeway_sign_accuracy_on_nonzero_actual": 0.49193548387096775
+      },
+      "rolling_expanding_ridge": {
+        "mae_pp": 0.16769564650398022,
+        "bias_pp": 0.0284442052361905,
+        "rising_mae_pp": 0.42020353632268553,
+        "falling_mae_pp": 0.1458251891132031,
+        "balanced_binary_rise_accuracy_excluding_actual_zero": 0.5,
+        "balanced_threeway_sign_accuracy_on_nonzero_actual": 0.5
+      }
+    }
+  },
+  "methodological_note": "The old test outcomes were already inspected before this extension. These are exploratory retrospective results, not a new blind test.",
+  "monthly_update_rule": "At target month m, fit only labels through m-1 after their official release; use the resulting actual at the next origin only.",
+  "graph_rule": "Weighted correlations of market-demeaned cities; same past label window/weights as fitting, recomputed monthly.",
+  "market_mean_note": "70-city unweighted descriptive means, not an official national price index or annual price growth."
+}

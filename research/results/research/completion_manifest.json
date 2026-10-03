@@ -1,0 +1,45 @@
+{
+  "status": "completed_and_verified",
+  "completed_at": "2026-10-04T00:33:27.907997+08:00",
+  "information_cutoff": "2026-02-28",
+  "actual_data_end": "2026-01",
+  "configuration_count": 22,
+  "validation_rows": 840,
+  "retrospective_rows": 910,
+  "final_forecast_rows": 70,
+  "evaluation_status": "retrospective research; researcher previously inspected historical evaluation period",
+  "forecast_origin_rule": "on or after the preceding statistical month's official release, generally mid-target-month",
+  "data_sha256": "2C8F96499B410FFA693F17FF11708509E9A3D37C57804BE0E7CD96D7EF324714",
+  "verified_metrics_match_saved_predictions": true,
+  "official_releases_before_cutoff": true,
+  "runtime_versions": {
+    "numpy": "1.26.4",
+    "pandas": "1.5.3",
+    "scikit-learn": "1.2.2",
+    "scipy": "1.17.1",
+    "matplotlib": "3.10.9",
+    "requests": "2.31.0",
+    "beautifulsoup4": "4.15.0",
+    "lxml": "6.1.1",
+    "threadpoolctl": "3.7.0",
+    "torch": "2.5.1+cpu"
+  },
+  "sha256_by_artifact": {
+    "research_models.py": "e1fd2f3b83b85b582b23bc8fc93a15458e8653cc5a6ba4cbb2684a05e57c872b",
+    "run_research_experiments.py": "4407091736079a3ea9b0de55ec91e06dbff672f3c808b96ff8149c69e3ce35a9",
+    "predict_saved_models.py": "f117f901d20dac316bef117a7a71acc3db36938582e38f6395844d13d944536e",
+    "最终实验报告.md": "550212e7e7fda38e8bf0ebd437849f2c5955dc1959a772da4bb301c14b14f278",
+    "output/pdf/70城新房指数预测_成果展示.pdf": "ab8b43c8f47b95f49ed53e67cb0109039d2f33a25cf8073bf776bebec89b2034",
+    "results/research/models/fair_tcn/preprocessing.npz": "9c13ad04cdeb0db21c67bc68a75b15c28e05ea378640b6b4e42357d63d351e58",
+    "results/research/models/fair_tcn/seed_13.pt": "70b16399eab7610d993c98aa7561277a94e645773b379246f733999f7249b114",
+    "results/research/models/fair_tcn/seed_31.pt": "3db13c9e69a0c55d6f09a3eac44d3b25a4950f1552d05a9f50a058583938b9c2",
+    "results/research/models/fair_tcn/seed_47.pt": "af7e4f4b72858ca8a8bdbcf98009241ac4a6bb7f0fc651f5185b151d867c4879",
+    "results/research/models/fair_tcn/seed_61.pt": "b9795f72d72314ab5e13d10cba381b47d79ce0c43bf1f5be4277c57779c2c563",
+    "results/research/models/fair_tcn/seed_79.pt": "c06f38dc767956509bd42e674de92b9670e17833a6dd5495986d7ddcc680d71e",
+    "results/research/models/ridge_25/ridge.npz": "54e06b421b592122a2477292d24912d0e4793bf3870a96eccaf1a15e86a6f409"
+  },
+  "pdf_qa": {
+    "page_count": 8,
+    "all_pages_rendered_and_visually_reviewed": true
+  }
+}
